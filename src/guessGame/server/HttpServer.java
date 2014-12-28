@@ -1,6 +1,4 @@
-package guessGame;
-
-import javax.swing.JPanel;
+package guessGame.server;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.ContextHandler;
@@ -25,16 +23,7 @@ public class HttpServer {
         HashSessionManager manager = new HashSessionManager();
         SessionHandler sessions = new SessionHandler(manager);
         context.setHandler(sessions);
-	    //ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-		//ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        //context.setContextPath("/");
-        //server.setHandler(h);
-        //server.setSessionIdManager(sessionIdManager);
- /*
-        context.addServlet(new ServletHolder(new HelloServlet()),"/*");
-        context.addServlet(new ServletHolder(new HelloServlet("Buongiorno Mondo")),"/it/*");
-        context.addServlet(new ServletHolder(new HelloServlet("Bonjour le Monde")),"/fr/*");
- */	
+	  
 		sessions.setHandler(new HttpHandler());
 		server.start();
 		server.join();

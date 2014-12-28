@@ -1,4 +1,4 @@
-package guessGame;
+package guessGame.tasks;
 
 import java.io.Serializable;
 
@@ -11,15 +11,12 @@ public class Task implements Challenge, Serializable{
 	private String answer;
 
 	public Task(PaintMessage challenge, String answer)  {
-
 		this.challenge = challenge;
-		this.answer = answer;
-		
+		this.answer = answer;		
 	}
 
 	public boolean isCorrect() {
 		return false;
-
 	}
 
 	@Override
