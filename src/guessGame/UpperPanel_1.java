@@ -2,7 +2,9 @@ package guessGame;
 
 import java.awt.Graphics;
 
-public class UpperPanel_1 extends UpperPanel {
+import javax.swing.JPanel;
+
+public class UpperPanel_1 extends JPanel {
 
 	private final String answer = "rectangle";
 
@@ -11,15 +13,12 @@ public class UpperPanel_1 extends UpperPanel {
 		g.drawRect(20, 20, 100, 100);
 	}
 
-	/*
-	 * public boolean getAnswer(String answer) {
-	 * 
-	 * if (this.answer.equals(answer)) { return true; } else { return false; } }
-	 */
+	public boolean getAnswer(String answer) {
 
-	@Override
-	public String getAnswer() {
-		return answer;
+		if (this.answer.equals(answer)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-
 }
